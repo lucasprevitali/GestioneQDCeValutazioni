@@ -7,9 +7,9 @@
   - [diario 10.09.2018](diari/2019_09_10_GestioneQDCeValutazioni_LucasPrevitali.pdf) 
 	
   
-  ## Gantt
-    - [gantt preventivo](progettazione/ProgAttività_LucasPrevitali.pdf)
+## Gantt
+- [gantt preventivo](progettazione/gannt.png)
 
   
- ## Documentazione
-  - [documentazione](documentazione/GestioneQDCeValutazioni_Documentazione.pdf)
+## Documentazione
+- [documentazione](documentazione/GestioneQDCeValutazioni_Documentazione.pdf)
