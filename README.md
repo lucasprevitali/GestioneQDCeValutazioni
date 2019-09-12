@@ -8,7 +8,7 @@
 	
   
   ## Gantt
-    - [gantt preventivo](progettazione/ProgAttività_LucasPrevitali.png)
+    - [gantt preventivo](progettazione/ProgAttività_LucasPrevitali.pdf)
 
   
  ## Documentazione
