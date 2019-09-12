@@ -8,6 +8,7 @@
 	
   
   ## Gantt
+    - [gantt preventivo](progettazione/gannt.png)
 
   
  ## Documentazione
