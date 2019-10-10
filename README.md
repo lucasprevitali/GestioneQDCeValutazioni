@@ -16,6 +16,7 @@
   - [diario 03.10.2018](diari/2019_10_03_GestioneQDCeValutazioni_LucasPrevitali.pdf) 
   - [diario 04.10.2018](diari/2019_10_04_GestioneQDCeValutazioni_LucasPrevitali.pdf) 
   - [diario 08.10.2018](diari/2019_10_08_GestioneQDCeValutazioni_LucasPrevitali.pdf) 
+  - [diario 10.10.2018](diari/2019_10_10_GestioneQDCeValutazioni_LucasPrevitali.pdf) 
   
 ## Gannt
 - [gannt preventivo](progettazione/gannt.png)
