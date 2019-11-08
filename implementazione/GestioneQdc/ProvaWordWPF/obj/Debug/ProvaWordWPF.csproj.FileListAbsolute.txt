@@ -1,0 +1,12 @@
+C:\Users\lucas\source\repos\GestioneQdc\ProvaWordWPF\bin\Debug\ProvaWordWPF.exe.config
+C:\Users\lucas\source\repos\GestioneQdc\ProvaWordWPF\bin\Debug\ProvaWordWPF.exe
+C:\Users\lucas\source\repos\GestioneQdc\ProvaWordWPF\bin\Debug\ProvaWordWPF.pdb
+C:\Users\lucas\source\repos\GestioneQdc\ProvaWordWPF\obj\Debug\ProvaWordWPF.csprojAssemblyReference.cache
+C:\Users\lucas\source\repos\GestioneQdc\ProvaWordWPF\obj\Debug\Interop.InteropExtensionLib.dll
+C:\Users\lucas\source\repos\GestioneQdc\ProvaWordWPF\obj\Debug\ProvaWordWPF.csproj.ResolveComReference.cache
+C:\Users\lucas\source\repos\GestioneQdc\ProvaWordWPF\obj\Debug\ProvaWordWPF.Form1.resources
+C:\Users\lucas\source\repos\GestioneQdc\ProvaWordWPF\obj\Debug\ProvaWordWPF.Properties.Resources.resources
+C:\Users\lucas\source\repos\GestioneQdc\ProvaWordWPF\obj\Debug\ProvaWordWPF.csproj.GenerateResource.cache
+C:\Users\lucas\source\repos\GestioneQdc\ProvaWordWPF\obj\Debug\ProvaWordWPF.csproj.CoreCompileInputs.cache
+C:\Users\lucas\source\repos\GestioneQdc\ProvaWordWPF\obj\Debug\ProvaWordWPF.exe
+C:\Users\lucas\source\repos\GestioneQdc\ProvaWordWPF\obj\Debug\ProvaWordWPF.pdb

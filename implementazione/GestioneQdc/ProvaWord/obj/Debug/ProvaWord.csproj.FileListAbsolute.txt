@@ -1,0 +1,11 @@
+C:\Users\lucas\source\repos\GestioneQdc\ProvaWord\bin\Debug\ProvaWord.exe.config
+C:\Users\lucas\source\repos\GestioneQdc\ProvaWord\bin\Debug\ProvaWord.exe
+C:\Users\lucas\source\repos\GestioneQdc\ProvaWord\bin\Debug\ProvaWord.pdb
+C:\Users\lucas\source\repos\GestioneQdc\ProvaWord\obj\Debug\ProvaWord.csprojAssemblyReference.cache
+C:\Users\lucas\source\repos\GestioneQdc\ProvaWord\obj\Debug\Interop.ExcelAdaptorLib.dll
+C:\Users\lucas\source\repos\GestioneQdc\ProvaWord\obj\Debug\Interop.LCC11.dll
+C:\Users\lucas\source\repos\GestioneQdc\ProvaWord\obj\Debug\Interop.TASKLAUNCHLib.dll
+C:\Users\lucas\source\repos\GestioneQdc\ProvaWord\obj\Debug\ProvaWord.csproj.ResolveComReference.cache
+C:\Users\lucas\source\repos\GestioneQdc\ProvaWord\obj\Debug\ProvaWord.csproj.CoreCompileInputs.cache
+C:\Users\lucas\source\repos\GestioneQdc\ProvaWord\obj\Debug\ProvaWord.exe
+C:\Users\lucas\source\repos\GestioneQdc\ProvaWord\obj\Debug\ProvaWord.pdb
