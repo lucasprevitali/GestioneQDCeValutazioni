@@ -1,0 +1,48 @@
+﻿<UserControl x:Class="QDCeValutazioni.Views.MainView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:QDCeValutazioni.Views"
+             xmlns:viewmodel="clr-namespace:QDCeValutazioni.ViewModels"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.DataContext>
+        <viewmodel:MainViewModel/>
+    </UserControl.DataContext>
+    <UserControl.Resources>
+        <DataTemplate DataType="{x:Type viewmodel:MenuViewModel}">
+            <local:MenuView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodel:QdcViewModel}">
+            <local:QdcView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodel:DescrizioneViewModel}">
+            <local:DescrizioneView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodel:RequisitoViewModel}">
+            <local:RequisitoView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodel:MotivazioneViewModel}">
+            <local:MotivazioneView/>
+        </DataTemplate>
+    </UserControl.Resources>
+    <Grid>
+        <DockPanel>
+            <Menu DockPanel.Dock="Top">
+                <MenuItem Header="_File">
+                    <MenuItem Header="_Crea QDC" Command="{Binding Path=QdcListCommand}"/>
+                    <MenuItem Header="_Seleziona QDC" Command="{Binding Path=MotivazioneListCommand}"/>
+                    <MenuItem x:Name="esciMI" Header="_Esci" Click="EsciMI_Click"/>
+                </MenuItem>
+                <MenuItem Header="_Info">
+                    <MenuItem Header="_Aiuto"/>
+                    <MenuItem x:Name="informazioniMI" Header="_Informazioni"/>
+                </MenuItem>
+            </Menu>
+            <StackPanel></StackPanel>
+        </DockPanel>
+        <ContentControl Content="{Binding Path=CurrentViewModel}"/>
+        <!--<local:MenuView></local:MenuView>-->
+    </Grid>
+</UserControl>

@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.nomeL = new System.Windows.Forms.Label();
-            this.nomeTB = new System.Windows.Forms.TextBox();
-            this.valTB = new System.Windows.Forms.TextBox();
+            this.titoloQdc = new System.Windows.Forms.TextBox();
+            this.nomeFormatore = new System.Windows.Forms.TextBox();
             this.valL = new System.Windows.Forms.Label();
             this.eseguiBT = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -40,32 +40,32 @@
             this.nomeL.AutoSize = true;
             this.nomeL.Location = new System.Drawing.Point(76, 59);
             this.nomeL.Name = "nomeL";
-            this.nomeL.Size = new System.Drawing.Size(33, 13);
+            this.nomeL.Size = new System.Drawing.Size(29, 13);
             this.nomeL.TabIndex = 0;
-            this.nomeL.Text = "nome";
+            this.nomeL.Text = "titolo";
             // 
-            // nomeTB
+            // titoloQdc
             // 
-            this.nomeTB.Location = new System.Drawing.Point(79, 86);
-            this.nomeTB.Name = "nomeTB";
-            this.nomeTB.Size = new System.Drawing.Size(100, 20);
-            this.nomeTB.TabIndex = 1;
+            this.titoloQdc.Location = new System.Drawing.Point(79, 86);
+            this.titoloQdc.Name = "titoloQdc";
+            this.titoloQdc.Size = new System.Drawing.Size(100, 20);
+            this.titoloQdc.TabIndex = 1;
             // 
-            // valTB
+            // nomeFormatore
             // 
-            this.valTB.Location = new System.Drawing.Point(242, 85);
-            this.valTB.Name = "valTB";
-            this.valTB.Size = new System.Drawing.Size(100, 20);
-            this.valTB.TabIndex = 2;
+            this.nomeFormatore.Location = new System.Drawing.Point(242, 85);
+            this.nomeFormatore.Name = "nomeFormatore";
+            this.nomeFormatore.Size = new System.Drawing.Size(100, 20);
+            this.nomeFormatore.TabIndex = 2;
             // 
             // valL
             // 
             this.valL.AutoSize = true;
             this.valL.Location = new System.Drawing.Point(239, 59);
             this.valL.Name = "valL";
-            this.valL.Size = new System.Drawing.Size(36, 13);
+            this.valL.Size = new System.Drawing.Size(80, 13);
             this.valL.TabIndex = 3;
-            this.valL.Text = "valore";
+            this.valL.Text = "nome formatore";
             // 
             // eseguiBT
             // 
@@ -84,8 +84,8 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.eseguiBT);
             this.Controls.Add(this.valL);
-            this.Controls.Add(this.valTB);
-            this.Controls.Add(this.nomeTB);
+            this.Controls.Add(this.nomeFormatore);
+            this.Controls.Add(this.titoloQdc);
             this.Controls.Add(this.nomeL);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -97,8 +97,8 @@
         #endregion
 
         private System.Windows.Forms.Label nomeL;
-        private System.Windows.Forms.TextBox nomeTB;
-        private System.Windows.Forms.TextBox valTB;
+        private System.Windows.Forms.TextBox titoloQdc;
+        private System.Windows.Forms.TextBox nomeFormatore;
         private System.Windows.Forms.Label valL;
         private System.Windows.Forms.Button eseguiBT;
     }

@@ -18,16 +18,21 @@ namespace QDCeValutazioni.DA.Services
         /// <param name="ctx">Contesto di dati del database.</param>
         public QdcDbDataRepository(AppDbContext ctx) : base(ctx)
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
         }
 
         /// <summary>
-        /// Ritorna tutte le asseganzioni ordinate per id.
+        /// Ritorna tutte le asseganzioni ordinate per titolo.
         /// </summary>
-        /// <returns>Le assegnazioni ordinate per id.</returns>
+        /// <returns>Le assegnazioni ordinate per titolo.</returns>
         public override IQueryable<Qdc> Get()
         {
-            return base.Get().OrderBy(s => s.Id);
+            return base.Get().OrderBy(s => s.Titolo);
+        }
+
+        public override Qdc Insert(Qdc entity)
+        {
+            return base.Insert(entity);
         }
     }
 }

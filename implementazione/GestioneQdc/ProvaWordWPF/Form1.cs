@@ -22,11 +22,42 @@ namespace ProvaWordWPF
 
         private void eseguiBT_Click(object sender, EventArgs e)
         {
+            var titolo = "<Titolo>";
+            var nomeFormatoreloc = "<NomeFormatore>";
+            var pathCriteri = "C:\\Users\\lucas\\Desktop\\samt\\anno4\\progetti\\" +
+                        "Gestione qdc e valutazioni\\A2. Criteri di valutazione LPI (estesi).docx";
+            var pathTemplate = "C:\\Users\\lucas\\Desktop\\samt\\anno4\\progetti\\Gestione qdc e valutazioni\\" +
+                        "progettazione\\TemplateQdc.docx";
             try
             {
-                // copia del file 
-                File.Copy("C:\\Users\\lucas\\Desktop\\samt\\anno4\\progetti\\Gestione qdc e valutazioni\\prova.docx", 
-                    "C:\\Users\\lucas\\Desktop\\samt\\anno4\\progetti\\Gestione qdc e valutazioni\\provatemp.docx", true);
+                //// copia del file 
+                //File.Copy(pathCriteri, pathTemplate, true);
+                //// valori predefiniti per l'apertura del file
+                //object missing = Missing.Value;
+                //// crea l'oggetto che contiene l'istanza di Word
+                //Word.Application wordApp = new Word.Application();
+                ////  crea l'oggetto che contiene il documento
+                //Word.Document aDoc = null;
+                //// oggetto che definisce il file copiato (e da modificare)
+                //object filename = pathTemplate;
+                //// Se il file esiste
+                //if (File.Exists((string)filename))
+                //{
+                //    object readOnly = false;
+                //    object isVisible = false;
+                //    wordApp.Visible = false;
+                //    //  apertura del file copiato
+                //    aDoc = wordApp.Documents.Open(ref filename, ref missing,
+                //        ref readOnly, ref missing, ref missing, ref missing,
+                //        ref missing, ref missing, ref missing, ref missing,
+                //        ref missing, ref isVisible, ref missing, ref missing,
+                //        ref missing, ref missing);
+                //    aDoc.Activate();
+                //    // richiama la funzione FindAndReplace passandogli due parametri,
+                //    // il testo da sostituire e con cosa sostituirlo
+                //    this.FindAndReplace(wordApp, titolo, titoloQdc.Text);
+                //    this.FindAndReplace(wordApp, nomeFormatoreloc, nomeFormatore.Text);
+
                 // valori predefiniti per l'apertura del file
                 object missing = Missing.Value;
                 // crea l'oggetto che contiene l'istanza di Word
@@ -34,7 +65,8 @@ namespace ProvaWordWPF
                 //  crea l'oggetto che contiene il documento
                 Word.Document aDoc = null;
                 // oggetto che definisce il file copiato (e da modificare)
-                object filename = "C:\\Users\\lucas\\Desktop\\samt\\anno4\\progetti\\Gestione qdc e valutazioni\\provatemp.docx";
+                object filename = pathCriteri;
+                object filenameTemplate = pathTemplate;
                 // Se il file esiste
                 if (File.Exists((string)filename))
                 {
@@ -50,10 +82,14 @@ namespace ProvaWordWPF
                     aDoc.Activate();
                     // richiama la funzione FindAndReplace passandogli due parametri,
                     // il testo da sostituire e con cosa sostituirlo
-                    this.FindAndReplace(wordApp, "<Date>", nomeTB.Text);
-                    this.FindAndReplace(wordApp, "<Name>", valTB.Text.Trim());
+                    this.FindAndReplace(wordApp, titolo, titoloQdc.Text);
+                    this.FindAndReplace(wordApp, nomeFormatoreloc, nomeFormatore.Text);
+
+
                     //  salva il file
                     aDoc.Save();
+                    ////////////////// IMPORTANTE, CHIUDERE IL PROCESSO ///////////////////////////////////////////////
+                    wordApp.Quit();
                 }
                 else
                 {
@@ -83,6 +119,7 @@ namespace ProvaWordWPF
             object visible = true;
             object replace = 2;
             object wrap = 1;
+            //replaceText = false;
             wordApp.Selection.Find.Execute(ref findText, ref matchCase,
                 ref matchWholeWord, ref matchWildCards, ref matchSoundsLike,
                 ref matchAllWordForms, ref forward, ref wrap, ref format,

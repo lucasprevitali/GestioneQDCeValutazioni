@@ -17,7 +17,7 @@ namespace QDCeValutazioni.DA.Services
         /// <param name="ctx">Contesto di dati del database.</param>
         public RequisitoDbDataRepository(AppDbContext ctx) : base(ctx)
         {
-            throw new NotImplementedException();
+           //throw new NotImplementedException();
         }
 
         /// <summary>

@@ -54,7 +54,8 @@ namespace QDCeValutazioni.DA
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlite("Data Source=C:\\Users\\lucas\\source\\repos\\GestioneQdc\\QDCeValutazioni.DA\\QdcDb.sqlite");
+                optionsBuilder.UseSqlite("Data Source=C:\\Users\\lucas\\source\\repos\\GestioneQdc" +
+                    "\\QDCeValutazioni.DA\\QdcDb.sqlite");
             }
         }
     }

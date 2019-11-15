@@ -1,0 +1,149 @@
+﻿<UserControl x:Class="QDCeValutazioni.Views.QdcView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:QDCeValutazioni.Views"
+             xmlns:viewmodel="clr-namespace:QDCeValutazioni.ViewModels"
+             mc:Ignorable="d" 
+             d:DesignHeight="380" d:DesignWidth="500">
+    <UserControl.DataContext>
+        <viewmodel:QdcViewModel/>
+    </UserControl.DataContext>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3*"></RowDefinition>
+            <RowDefinition Height="3*"></RowDefinition>
+            <RowDefinition Height="3*"></RowDefinition>
+            <RowDefinition Height="3*"></RowDefinition>
+            <RowDefinition Height="3*"></RowDefinition>
+            <RowDefinition Height="3*"></RowDefinition>
+            <RowDefinition Height="3*"></RowDefinition>
+            <RowDefinition Height="3*"></RowDefinition>
+            <RowDefinition Height="3*"></RowDefinition>
+            <RowDefinition Height="4*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <!--<DataGrid x:Name="dgEsercizi" Grid.Row="0" ItemsSource="{Binding Path=Qdcs}"/>-->
+
+        <!--<Label Grid.Row="0" 
+               Grid.Column="0" 
+               Grid.ColumnSpan="2"
+               Content="Percorso File"></Label>-->
+        <TextBox Grid.Row="0" 
+                 Grid.Column="0" 
+                 Grid.ColumnSpan="2" 
+                 Margin="20,8,20,8" 
+                 x:Name="PathTextBox" 
+                 AutomationProperties.HelpText="Path file" 
+                 Text="Path file" Foreground="Gray" 
+                 MouseEnter="PathTextBox_MouseEnter" MouseLeave="PathTextBox_MouseLeave"/>
+
+        <TextBox Grid.Row="1" 
+                 Grid.Column="0" 
+                 Grid.ColumnSpan="2" 
+                 Margin="20,8,20,8"
+                 x:Name="TitoloTextBox" 
+                 AutomationProperties.HelpText="Titolo" 
+                 Text="Titolo" Foreground="Gray"></TextBox>
+
+        <TextBox Grid.Row="2" 
+                 Grid.Column="0" 
+                 Grid.ColumnSpan="1" 
+                 Margin="20,8,20,8" 
+                 x:Name="NomeFormatoreTextBox" 
+                 AutomationProperties.HelpText="Nome formatore" 
+                 Text="Nome formatore" Foreground="Gray"></TextBox>
+
+        <TextBox Grid.Row="2" 
+                 Grid.Column="1" 
+                 Grid.ColumnSpan="1" 
+                 Margin="20,8,20,8" 
+                 x:Name="CognomeFormatoreTextBox" 
+                 AutomationProperties.HelpText="Cognome formatore" 
+                Text="Cognome formatore" Foreground="Gray"></TextBox>
+
+        <TextBox Grid.Row="4" 
+                 Grid.Column="0" 
+                 Grid.ColumnSpan="1" 
+                 Margin="20,8,20,8" 
+                 x:Name="NomePeritoTextBox" 
+                 AutomationProperties.HelpText="Nome perito" 
+                 Text="Nome perito" Foreground="Gray"></TextBox>
+
+        <TextBox Grid.Row="4" 
+                 Grid.Column="1" 
+                 Grid.ColumnSpan="1" 
+                 Margin="20,8,20,8" 
+                 x:Name="CognomePeritoTextBox" 
+                 AutomationProperties.HelpText="Cognome perito" 
+                 Text="Cognome perito" Foreground="Gray"></TextBox>
+
+        <TextBox Grid.Row="3" 
+                 Grid.Column="0" 
+                 Grid.ColumnSpan="2" 
+                 Margin="20,8,20,8" 
+                 x:Name="EmailFormatoreTextBox" 
+                 AutomationProperties.HelpText="Email formatore" 
+                 Text="Mail formatore" Foreground="Gray"></TextBox>
+
+        <TextBox Grid.Row="5" 
+                 Grid.Column="0" 
+                 Grid.ColumnSpan="2" 
+                 Margin="20,8,20,8" 
+                 x:Name="EmailPeritoTextBox" 
+                 AutomationProperties.HelpText="Email perito" 
+                 Text="Mail perito" Foreground="Gray"></TextBox>
+
+        <DatePicker Grid.Row="6" Grid.Column="0" Margin="20,8,140,8" 
+                    x:Name="DataInizio" 
+                    Text="Data inizio" Foreground="Gray"></DatePicker>
+        <DatePicker Grid.Row="6" Grid.Column="1" Margin="20,8,140,8" 
+                    x:Name="DataConsegna" 
+                    Text="Data consegna" Foreground="Gray"></DatePicker>
+
+        <TextBox Grid.Row="7" 
+                 Grid.Column="0" 
+                 Margin="20,8,140,8" 
+                 x:Name="OraInizio" 
+                 AutomationProperties.HelpText="hh:mm" 
+                 Text="Ora inizio" Foreground="Gray"></TextBox>
+
+        <TextBox Grid.Row="7" 
+                 Grid.Column="1" 
+                 Margin="20,8,140,8" 
+                 x:Name="OraFine" 
+                 AutomationProperties.HelpText="hh:mm" 
+                 Text="Ora fine" Foreground="Gray"></TextBox>
+        
+        <TextBox Grid.Row="8" 
+                 Grid.Column="0" 
+                 Margin="20,8,140,8" 
+                 x:Name="NumeroOre" 
+                 AutomationProperties.HelpText="numero ore" 
+                 Text="Numero ore" Foreground="Gray"></TextBox>
+
+        <Button Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="1" 
+                Margin="40,10,40,10" 
+                Content="Salva" 
+                Command="{Binding SaveInfo}" 
+                FontSize="14" 
+                x:Name="SaveInfoButton" Click="SaveInfoButton_Click"/>
+
+        <Button Grid.Row="9" Grid.Column="1" Grid.ColumnSpan="1" 
+                Margin="40,10,40,10" 
+                Content="Continua" 
+                Command="{Binding DescrizioneCommand}" 
+                FontSize="14" 
+                x:Name="GoDescrizioneButton"/>
+
+        <!--<StackPanel Grid.Row="9" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button Command="{Binding Add}" Content="Aggiungi"></Button>
+            <Button Command="{Binding Save}" Content="Update"></Button>
+            <Button Command="{Binding Delete}" Content="Elimina"></Button>
+        </StackPanel>-->
+    </Grid>
+</UserControl>
