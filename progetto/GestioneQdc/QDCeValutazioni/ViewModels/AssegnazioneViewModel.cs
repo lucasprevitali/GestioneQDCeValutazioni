@@ -25,8 +25,7 @@ namespace QDCeValutazioni.ViewModels
         /// </summary>
         public AssegnazioneViewModel()
         {
-            //AssegnazioneDbDataRepository repo = new AssegnazioneDbDataRepository(new AppDbContext());
-            //Assegnazioni = new ObservableCollection<Assegnazione>(repo.Get());
+
         }
     }
 }

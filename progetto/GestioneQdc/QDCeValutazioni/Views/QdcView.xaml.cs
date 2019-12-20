@@ -26,80 +26,85 @@ namespace QDCeValutazioni.Views
         public QdcView()
         {
             InitializeComponent();
+            //DataInizio.SelectedDate = DateTime.Today;
+            //DataConsegna.SelectedDate = DateTime.Today;
+
+            DataInizio.Text = DateTime.Today.ToString().Remove(10);
+            DataConsegna.Text = DateTime.Today.ToString().Remove(10);
         }
 
         private void SaveInfoButton_Click(object sender, RoutedEventArgs e)
         {
-            var path = PathTextBox.Text;
-            var pathCopia = "C:\\Users\\lucas\\Desktop\\samt\\anno4\\progetti\\Gestione qdc e valutazioni\\" +
-                        "progettazione\\TemplateQdcTry.docx";
-            var titoloKey = "<Titolo>";
-            var nomeFormatoreKey = "<NomeFormatore>";
-            var cognomeFormatoreKey = "<CognomeFormatore>";            
-            var nomePeritoKey = "<NomePerito>";     
-            var cognomePeritoKey = "<CognomePerito>";
-            var mailFormatoreKey = "<EmailFormatore>";
-            var mailPeritoKey = "<EmailPerito>";
-            var dataInizioKey = "<DataInizio>";
-            var dataConsegnaKey = "<DataConsegna>";
-            var oraInizioKey = "<OraInizio>";
-            var oraFineKey = "<OraFine>";
-            var numeroOreKey = "<NumeroOre>";
+            //var path = PathTextBox.Text;
+            //var pathCopia = "C:\\Users\\lucas\\Desktop\\samt\\anno4\\progetti\\Gestione qdc e valutazioni\\" +
+            //            "progettazione\\TemplateQdcTry.docx";
+            //var titoloKey = "<Titolo>";
+            //var nomeFormatoreKey = "<NomeFormatore>";
+            //var cognomeFormatoreKey = "<CognomeFormatore>";            
+            //var nomePeritoKey = "<NomePerito>";     
+            //var cognomePeritoKey = "<CognomePerito>";
+            //var mailFormatoreKey = "<EmailFormatore>";
+            //var mailPeritoKey = "<EmailPerito>";
+            //var dataInizioKey = "<DataInizio>";
+            //var dataConsegnaKey = "<DataConsegna>";
+            //var oraInizioKey = "<OraInizio>";
+            //var oraFineKey = "<OraFine>";
+            //var numeroOreKey = "<NumeroOre>";
 
-            try
-            {
-                // copia del file 
-                File.Copy(path, pathCopia, true);
-                // valori predefiniti per l'apertura del file
-                object missing = Missing.Value;
-                // crea l'oggetto che contiene l'istanza di Word
-                Word.Application wordApp = new Word.Application();
-                //  crea l'oggetto che contiene il documento
-                Word.Document aDoc = null;
-                // oggetto che definisce il file copiato (e da modificare)
-                object filename = pathCopia;
-                // Se il file esiste
-                if (File.Exists((string)filename))
-                {
-                    object readOnly = false;
-                    object isVisible = false;
-                    wordApp.Visible = false;
-                    //  apertura del file copiato
-                    aDoc = wordApp.Documents.Open(ref filename, ref missing,
-                        ref readOnly, ref missing, ref missing, ref missing,
-                        ref missing, ref missing, ref missing, ref missing,
-                        ref missing, ref isVisible, ref missing, ref missing,
-                        ref missing, ref missing);
-                    aDoc.Activate();
-                    // richiama la funzione FindAndReplace passandogli due parametri,
-                    // il testo da sostituire e con cosa sostituirlo
-                    this.FindAndReplace(wordApp, titoloKey, TitoloTextBox.Text);
-                    this.FindAndReplace(wordApp, nomeFormatoreKey, NomeFormatoreTextBox.Text);
-                    this.FindAndReplace(wordApp, cognomeFormatoreKey, CognomeFormatoreTextBox.Text);
-                    this.FindAndReplace(wordApp, nomePeritoKey, NomePeritoTextBox.Text);
-                    this.FindAndReplace(wordApp, cognomePeritoKey, CognomePeritoTextBox.Text);
-                    this.FindAndReplace(wordApp, mailPeritoKey, EmailPeritoTextBox.Text);
-                    this.FindAndReplace(wordApp, mailFormatoreKey, EmailFormatoreTextBox.Text);
-                    this.FindAndReplace(wordApp, dataInizioKey, DataInizio.Text);
-                    this.FindAndReplace(wordApp, dataConsegnaKey, DataConsegna.Text);
-                    this.FindAndReplace(wordApp, oraInizioKey, OraInizio.Text);
-                    this.FindAndReplace(wordApp, oraFineKey, OraFine.Text);
-                    this.FindAndReplace(wordApp, numeroOreKey, NumeroOre.Text);
+            //try
+            //{
+            //    // copia del file 
+            //    File.Copy(path, pathCopia, true);
+            //    // valori predefiniti per l'apertura del file
+            //    object missing = Missing.Value;
+            //    // crea l'oggetto che contiene l'istanza di Word
+            //    Word.Application wordApp = new Word.Application();
+            //    //  crea l'oggetto che contiene il documento
+            //    Word.Document aDoc = null;
+            //    // oggetto che definisce il file copiato (e da modificare)
+            //    object filename = pathCopia;
+            //    // Se il file esiste
+            //    if (File.Exists((string)filename))
+            //    {
+            //        object readOnly = false;
+            //        object isVisible = false;
+            //        wordApp.Visible = false;
+            //        //  apertura del file copiato
+            //        aDoc = wordApp.Documents.Open(ref filename, ref missing,
+            //            ref readOnly, ref missing, ref missing, ref missing,
+            //            ref missing, ref missing, ref missing, ref missing,
+            //            ref missing, ref isVisible, ref missing, ref missing,
+            //            ref missing, ref missing);
+            //        aDoc.Activate();
+            //        // richiama la funzione FindAndReplace passandogli due parametri,
+            //        // il testo da sostituire e con cosa sostituirlo
+            //        this.FindAndReplace(wordApp, titoloKey, TitoloTextBox.Text);
+            //        this.FindAndReplace(wordApp, nomeFormatoreKey, NomeFormatoreTextBox.Text);
+            //        this.FindAndReplace(wordApp, cognomeFormatoreKey, CognomeFormatoreTextBox.Text);
+            //        this.FindAndReplace(wordApp, nomePeritoKey, NomePeritoTextBox.Text);
+            //        this.FindAndReplace(wordApp, cognomePeritoKey, CognomePeritoTextBox.Text);
+            //        this.FindAndReplace(wordApp, mailPeritoKey, EmailPeritoTextBox.Text);
+            //        this.FindAndReplace(wordApp, mailFormatoreKey, EmailFormatoreTextBox.Text);
+            //        this.FindAndReplace(wordApp, dataInizioKey, DataInizio.Text);
+            //        this.FindAndReplace(wordApp, dataConsegnaKey, DataConsegna.Text);
+            //        this.FindAndReplace(wordApp, oraInizioKey, OraInizio.Text);
+            //        this.FindAndReplace(wordApp, oraFineKey, OraFine.Text);
+            //        this.FindAndReplace(wordApp, numeroOreKey, NumeroOre.Text);
 
-                    //  salva il file
-                    aDoc.Save();
-                    ////////////////// IMPORTANTE, CHIUDERE IL PROCESSO ///////////////////////////////////////////////
-                    wordApp.Quit();
-                }
-                else
-                {
-                    MessageBox.Show("File does not exist.", "No File", MessageBoxButton.OK);
-                }
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Error in process.", "Internal Error", MessageBoxButton.OK);
-            }
+            //        //  salva il file
+            //        aDoc.Save();
+            //        ////////////////// IMPORTANTE, CHIUDERE IL PROCESSO ///////////////////////////////////////////////
+            //        wordApp.Quit();
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show("File does not exist.", "No File", MessageBoxButton.OK);
+            //    }
+            //}
+            //catch (Exception)
+            //{
+            //    MessageBox.Show("Error in process.", "Internal Error", MessageBoxButton.OK);
+            //}
         }
 
         private void FindAndReplace(Word.Application wordApp, object findText, object replaceText)
@@ -128,26 +133,26 @@ namespace QDCeValutazioni.Views
                 ref matchAlefHamza, ref matchControl);
         }
 
-        private void PathTextBox_MouseEnter(object sender, MouseEventArgs e)
-        {
-            if (PathTextBox.Text == "Path file")
-            {
-                PathTextBox.Text = "";
-                PathTextBox.Foreground = Brushes.Black;
-            }
-        }
+        //private void PathTextBox_MouseEnter(object sender, MouseEventArgs e)
+        //{
+        //    if (PathTextBox.Text == "Path file")
+        //    {
+        //        PathTextBox.Text = "";
+        //        PathTextBox.Foreground = Brushes.Black;
+        //    }
+        //}
 
-        private void PathTextBox_MouseLeave(object sender, MouseEventArgs e)
-        {
-            if (PathTextBox.Text == "")
-            {
-                //if(PathTextBox.AreAnyTouchesCaptured == true)
-                //{
-                    PathTextBox.Text = "Path file";
-                    PathTextBox.Foreground = Brushes.Gray;
-                //}
-            }
-        }
+        //private void PathTextBox_MouseLeave(object sender, MouseEventArgs e)
+        //{
+        //    if (PathTextBox.Text == "")
+        //    {
+        //        //if(PathTextBox.AreAnyTouchesCaptured == true)
+        //        //{
+        //            PathTextBox.Text = "Path file";
+        //            PathTextBox.Foreground = Brushes.Gray;
+        //        //}
+        //    }
+        //}
 
         
     }

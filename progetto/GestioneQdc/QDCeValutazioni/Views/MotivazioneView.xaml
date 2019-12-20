@@ -29,8 +29,9 @@
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
+        <!-- Dati del Requisito al quale assegnare il voto -->
         <TextBox
-            Grid.Row="0"
+            Grid.Row="1"
             Grid.Column="0"
             Grid.ColumnSpan="1"
             Margin="5,8,5,8"
@@ -40,7 +41,7 @@
         </TextBox>
 
         <TextBox
-            Grid.Row="0"
+            Grid.Row="1"
             Grid.Column="1"
             Grid.ColumnSpan="1"
             Margin="5,8,5,8"
@@ -50,7 +51,7 @@
         </TextBox>
 
         <TextBox
-            Grid.Row="0"
+            Grid.Row="1"
             Grid.Column="2"
             Grid.ColumnSpan="6"
             Margin="5,8,5,8"
@@ -59,15 +60,7 @@
             Text="Requisito">
         </TextBox>
 
-        <Button
-            Grid.Row="1"
-            Grid.Column="0"
-            Grid.ColumnSpan="8"
-            Margin="5,5,5,5"
-            x:Name="SaveRequisiti"
-            Content="Seleziona">
-        </Button>
-
+        <!-- Voto del Requisito. -->
         <TextBox
             Grid.Row="2"
             Grid.Column="5"
@@ -77,19 +70,33 @@
             Text="Voto">
         </TextBox>
 
+        <!-- Motivazione del voto del Requisito. -->
         <TextBox
             TextWrapping="Wrap"
             AcceptsReturn="True"
             HorizontalScrollBarVisibility="Disabled"
             VerticalScrollBarVisibility="Auto"
-            Grid.Row="3" 
+            Grid.Row="3"
+            Grid.RowSpan="1"
             Grid.Column="0"
             Grid.ColumnSpan="8"
             Margin="5,8,5,8"
+            Text="{Binding Path=Motivazioni}"
             x:Name="Motivazione">
         </TextBox>
 
+        <!-- Bottone per salvare sul database e sul file Word. -->
         <Button
+            Grid.Row="4"
+            Grid.Column="5"
+            Grid.ColumnSpan="3"
+            Margin="0,5,5,5"
+            x:Name="Avanti"
+            Content="Avanti"
+            Command="{Binding Path=SaveVoto}" >
+        </Button>
+
+        <!--<Button
             Grid.Row="4"
             Grid.Column="3"
             Grid.ColumnSpan="1"
@@ -132,6 +139,6 @@
             Margin="0,5,5,5"
             x:Name="AvantiFull"
             Content=">>">
-        </Button>
+        </Button>-->
     </Grid>
 </UserControl>

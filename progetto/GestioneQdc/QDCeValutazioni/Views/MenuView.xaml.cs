@@ -29,5 +29,10 @@ namespace QDCeValutazioni.Views
         {
 
         }
+
+        private void EsciMI_Click(object sender, RoutedEventArgs e)
+        {
+            System.Windows.Application.Current.Shutdown();
+        }
     }
 }

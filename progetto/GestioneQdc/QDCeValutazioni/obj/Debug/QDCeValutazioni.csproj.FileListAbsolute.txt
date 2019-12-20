@@ -176,3 +176,9 @@ C:\Users\lucas\source\repos\GestioneQdc\QDCeValutazioni\obj\Debug\QDCeValutazion
 C:\Users\lucas\source\repos\GestioneQdc\QDCeValutazioni\obj\Debug\QDCeValutazioni.pdb
 C:\Users\lucas\source\repos\GestioneQdc\QDCeValutazioni\obj\Debug\Interop.InteropExtensionLib.dll
 C:\Users\lucas\source\repos\GestioneQdc\QDCeValutazioni\obj\Debug\QDCeValutazioni.csproj.ResolveComReference.cache
+C:\Users\lucas\source\repos\GestioneQdc\QDCeValutazioni\obj\Debug\Views\SelezionaView.g.cs
+C:\Users\lucas\source\repos\GestioneQdc\QDCeValutazioni\obj\Debug\Views\SelezionaView.baml
+C:\Users\lucas\source\repos\GestioneQdc\QDCeValutazioni\obj\Debug\Views\VisualizzaView.g.cs
+C:\Users\lucas\source\repos\GestioneQdc\QDCeValutazioni\obj\Debug\Views\VisualizzaView.baml
+C:\Users\lucas\source\repos\GestioneQdc\QDCeValutazioni\obj\Debug\Views\VisualizzaVotiView.g.cs
+C:\Users\lucas\source\repos\GestioneQdc\QDCeValutazioni\obj\Debug\Views\VisualizzaVotiView.baml

@@ -1,0 +1,34 @@
+﻿<UserControl x:Class="QDCeValutazioni.Views.SelezionaView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:QDCeValutazioni.Views"
+             xmlns:viewmodel="clr-namespace:QDCeValutazioni.ViewModels"
+             mc:Ignorable="d" 
+             d:DesignHeight="380" d:DesignWidth="500">
+    <UserControl.DataContext>
+        <viewmodel:SelezionaViewModel />
+    </UserControl.DataContext>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+        
+        <Label Grid.Column="0" Grid.Row="0" Content="Qdc" HorizontalAlignment="Center" />
+
+        <!-- Contiene tutti i Qdc ordinati per Id. -->
+        <DataGrid x:Name="QdcDataGrid" Grid.Column="0" Grid.Row="1" IsReadOnly="True"
+                  ItemsSource="{Binding Path=Qdcs}">
+        </DataGrid>
+
+        <!-- Bottone per la selezione di un Qdc. -->
+        <Button Grid.Column="0" Grid.Row="2" Content="Seleziona Qdc"
+                Command="{Binding Path=SelezionaCommand}"/>
+    </Grid>
+</UserControl>

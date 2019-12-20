@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\lucas\source\repos\GestioneQdc\QDCeValutazioni\App.xaml
-71135996813
+101469229093
 2-2110027296
-42-1054282092
+481649378129
 1521127322824
-MainWindow.xaml;Views\DescrizioneView.xaml;Views\MainView.xaml;Views\MenuView.xaml;Views\MotivazioneView.xaml;Views\QdcView.xaml;Views\RequisitoView.xaml;
+MainWindow.xaml;Views\DescrizioneView.xaml;Views\MainView.xaml;Views\MenuView.xaml;Views\MotivazioneView.xaml;Views\QdcView.xaml;Views\RequisitoView.xaml;Views\SelezionaView.xaml;Views\VisualizzaView.xaml;Views\VisualizzaVotiView.xaml;
 
-True
+False
 

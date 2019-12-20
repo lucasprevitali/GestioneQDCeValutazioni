@@ -12,7 +12,7 @@
     </UserControl.DataContext>
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="2*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="1.2*"></RowDefinition>
             <RowDefinition Height="2*"></RowDefinition>
             <RowDefinition Height="2*"></RowDefinition>
@@ -30,16 +30,6 @@
             <ColumnDefinition Width="6*"></ColumnDefinition>
             <ColumnDefinition Width="0.7*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-
-        <ListBox
-            Grid.Row="0"
-            Grid.Column="0"
-            Grid.ColumnSpan="4"
-            Margin="20,8,20,8"
-            x:Name="SelectListBox" 
-            AutomationProperties.HelpText="Seleziona" 
-            ItemsSource="{Binding selezionaSelect}">
-        </ListBox>
 
         <Label Grid.Row="1"
                Grid.Column="1" 
@@ -132,12 +122,14 @@
             AutomationProperties.HelpText="A20">
         </TextBox>
 
+        <!-- TextBox per inserire i codice dei requisiti da cercare. -->
         <TextBox
             Grid.Row="2"
             Grid.Column="1"
             Grid.ColumnSpan="1"
             Margin="20,8,20,8"
             x:Name="cod14" 
+            Text="{Binding Path=Cod14, Mode=TwoWay}"
             AutomationProperties.HelpText="Codice">
         </TextBox>
 
@@ -147,6 +139,7 @@
             Grid.ColumnSpan="1"
             Margin="20,8,20,8"
             x:Name="cod15" 
+            Text="{Binding Path=Cod15, Mode=TwoWay}"
             AutomationProperties.HelpText="Codice">
         </TextBox>
 
@@ -156,6 +149,7 @@
             Grid.ColumnSpan="1"
             Margin="20,8,20,8"
             x:Name="cod16" 
+            Text="{Binding Path=Cod16, Mode=TwoWay}"
             AutomationProperties.HelpText="Codice">
         </TextBox>
 
@@ -165,6 +159,7 @@
             Grid.ColumnSpan="1"
             Margin="20,8,20,8"
             x:Name="cod17" 
+            Text="{Binding Path=Cod17, Mode=TwoWay}"
             AutomationProperties.HelpText="Codice">
         </TextBox>
 
@@ -174,6 +169,7 @@
             Grid.ColumnSpan="1"
             Margin="20,8,20,8"
             x:Name="cod18" 
+            Text="{Binding Path=Cod18, Mode=TwoWay}"
             AutomationProperties.HelpText="Codice">
         </TextBox>
 
@@ -182,7 +178,8 @@
             Grid.Column="1"
             Grid.ColumnSpan="1"
             Margin="20,8,20,8"
-            x:Name="cod19" 
+            x:Name="cod19"
+            Text="{Binding Path=Cod19, Mode=TwoWay}"
             AutomationProperties.HelpText="Codice">
         </TextBox>
 
@@ -192,9 +189,15 @@
             Grid.ColumnSpan="1"
             Margin="20,8,20,8"
             x:Name="cod20" 
+            Text="{Binding Path=Cod20, Mode=TwoWay}"
             AutomationProperties.HelpText="Codice">
         </TextBox>
 
+        <!--<DataGrid x:Name="QdcDataGrid" Grid.Column="2" Grid.Row="2" IsReadOnly="True"
+                  ItemsSource="{Binding Path=Titolo14, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+        </DataGrid>-->
+
+        <!-- TextBox che mostra i titoli dei Qdc cercati. -->
         <TextBox
             Grid.Row="2"
             Grid.Column="2"
@@ -202,7 +205,7 @@
             Margin="20,8,20,8"
             x:Name="req14"
             IsEnabled="False"
-            Text="Seleziona Requisito"
+            Text="{Binding Path=Req14, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
             AutomationProperties.HelpText="Seleziona Requisito">
         </TextBox>
 
@@ -213,7 +216,7 @@
             Margin="20,8,20,8"
             x:Name="req15"
             IsEnabled="False"
-            Text="Seleziona Requisito"
+            Text="{Binding Path=Req15, Mode=TwoWay}"
             AutomationProperties.HelpText="Seleziona Requisito">
         </TextBox>
 
@@ -224,7 +227,7 @@
             Margin="20,8,20,8"
             x:Name="req16" 
             IsEnabled="False"
-            Text="Seleziona Requisito"
+            Text="{Binding Path=Req16, Mode=TwoWay}"
             AutomationProperties.HelpText="Seleziona Requisito">
         </TextBox>
 
@@ -235,7 +238,7 @@
             Margin="20,8,20,8"
             x:Name="req17" 
             IsEnabled="False"
-            Text="Seleziona Requisito"
+            Text="{Binding Path=Req17, Mode=TwoWay}"
             AutomationProperties.HelpText="Seleziona Requisito">
         </TextBox>
 
@@ -246,7 +249,7 @@
             Margin="20,8,20,8"
             x:Name="req18" 
             IsEnabled="False"
-            Text="Seleziona Requisito"
+            Text="{Binding Path=Req18, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
             AutomationProperties.HelpText="Seleziona Requisito">
         </TextBox>
 
@@ -257,7 +260,7 @@
             Margin="20,8,20,8"
             x:Name="req19" 
             IsEnabled="False"
-            Text="Seleziona Requisito"
+            Text="{Binding Path=Req19, Mode=TwoWay}"
             AutomationProperties.HelpText="Seleziona Requisito">
         </TextBox>
 
@@ -268,10 +271,11 @@
             Margin="20,8,20,8"
             x:Name="req20" 
             IsEnabled="False"
-            Text="Seleziona Requisito"
+            Text="{Binding Path=Req20, Mode=TwoWay}"
             AutomationProperties.HelpText="Seleziona Requisito">
         </TextBox>
 
+        <!-- Bottoni per cercare i requisiti. -->
         <Button
             Grid.Row="2"
             Grid.Column="3"
@@ -279,7 +283,7 @@
             Margin="0,8,20,8"
             x:Name="Cerca14Buttton"
             Content="Cerca" 
-            Command="{Binding Cerca}"
+            Command="{Binding CercaA14}"
             FontSize="13">
         </Button>
 
@@ -290,7 +294,7 @@
             Margin="0,8,20,8"
             x:Name="Cerca15Buttton"
             Content="Cerca" 
-            Command="{Binding Cerca}"
+            Command="{Binding CercaA15}"
             FontSize="13">
         </Button>
 
@@ -301,7 +305,7 @@
             Margin="0,8,20,8"
             x:Name="Cerca16Buttton"
             Content="Cerca" 
-            Command="{Binding Cerca}"
+            Command="{Binding CercaA16}"
             FontSize="13">
         </Button>
 
@@ -312,7 +316,7 @@
             Margin="0,8,20,8"
             x:Name="Cerca17Buttton"
             Content="Cerca" 
-            Command="{Binding Cerca}"
+           Command="{Binding CercaA17}"
             FontSize="13">
         </Button>
 
@@ -323,7 +327,7 @@
             Margin="0,8,20,8"
             x:Name="Cerca18Buttton"
             Content="Cerca" 
-            Command="{Binding Cerca}"
+            Command="{Binding CercaA18}"
             FontSize="13">
         </Button>
 
@@ -334,7 +338,7 @@
             Margin="0,8,20,8"
             x:Name="Cerca19Buttton"
             Content="Cerca" 
-            Command="{Binding Cerca}"
+            Command="{Binding CercaA19}"
             FontSize="13">
         </Button>
 
@@ -345,10 +349,11 @@
             Margin="0,8,20,8"
             x:Name="Cerca20Buttton"
             Content="Cerca" 
-            Command="{Binding Cerca}"
+            Command="{Binding CercaA20}"
             FontSize="13">
         </Button>
 
+        <!-- Bottone per salvare sul database e sul file Word. -->
         <Button
             Grid.Row="10"
             Grid.Column="0"
@@ -356,7 +361,7 @@
             Margin="20,8,20,8"
             x:Name="SaveRequisiti"
             Content="Salva e Continua" 
-            Command="{Binding MotivazioneCommand}"
+            Command="{Binding ContinuaCommand}"
             FontSize="14">
         </Button>
     </Grid>

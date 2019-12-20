@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="QDCeValutazioni.DA.Models.Qdc">
+    <Position X="2" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAoAAAIgAAIQAAEAQACACqAAAAAAAAgAAAAIQAAAA=</HashCode>
+      <FileName>Models\Qdc.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QDCeValutazioni.DA.Models.Requisito">
+    <Position X="3.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIQAAAA=</HashCode>
+      <FileName>Models\Requisito.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QDCeValutazioni.DA.Models.BaseEntity" Collapsed="true">
+    <Position X="2" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\BaseEntity.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QDCeValutazioni.DA.Models.Assegnazione">
+    <Position X="5.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAABAABAAAAAAAAAAAAAAAAAAAAAAAADJAAAA=</HashCode>
+      <FileName>Models\Assegnazione.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -11,17 +11,11 @@ namespace QDCeValutazioni.ViewModels
 {
     public class MenuViewModel : BindableBase
     {
-        /// <summary>
-        /// istanza dei ViewModel
-        /// </summary>
-        private QdcViewModel CreaQdcVM;
-        private MotivazioneViewModel SelezionaQdcVM;
-
         /// <summary>   
         /// istanza di IDelegateCommand per la delega delle operazioni
         /// </summary>
         public IDelegateCommand QdcListCommand { get; set; }
-        public IDelegateCommand MotivazioneListCommand { get; set; }
+        public IDelegateCommand SelezionaListCommand { get; set; }
 
         /// <summary>
         /// ViewModel da mostrare
@@ -39,20 +33,41 @@ namespace QDCeValutazioni.ViewModels
         /// </summary>
         public MenuViewModel()
         {
-            RegisterCommands();
+            QdcListCommand = new DelegateCommand(OnQdcList, CanQdcList);
+            SelezionaListCommand = new DelegateCommand(OnSelezionaList, CanSelezionaList);
         }
 
         private void RegisterCommands()
         {
-            CreaQdcVM = new QdcViewModel();
-            SelezionaQdcVM = new MotivazioneViewModel();
-            QdcListCommand = new DelegateCommand(OnQdcList, CanQdcList);
-            MotivazioneListCommand = new DelegateCommand(OnMotivazioneList, CanMotivazioneList);
+            
         }
 
-        private void OnQdcList(object obj) { Messenger.Default.Send<BindableBase>(CreaQdcVM); }
-        private bool CanQdcList(object arg) { return true; }
-        private void OnMotivazioneList(object obj) { Messenger.Default.Send<BindableBase>(SelezionaQdcVM); }
-        private bool CanMotivazioneList(object arg) { return true; }
+        /// <summary>
+        /// Metodo per spostarsi in QdcView.
+        /// </summary>
+        /// <param name="obj"></param>
+        private void OnQdcList(object obj)
+        {
+            Messenger.Default.Send<BindableBase>(new QdcViewModel());
+        }
+
+        private bool CanQdcList(object arg)
+        {
+            return true;
+        }
+
+        /// <summary>
+        /// Metodo per spostarsi in SelezionaView.
+        /// </summary>
+        /// <param name="obj"></param>
+        private void OnSelezionaList(object obj)
+        {
+            Messenger.Default.Send<BindableBase>(new SelezionaViewModel());
+        }
+
+        private bool CanSelezionaList(object arg)
+        {
+            return true;
+        }
     }
 }

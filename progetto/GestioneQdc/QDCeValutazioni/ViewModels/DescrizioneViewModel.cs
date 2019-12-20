@@ -13,16 +13,20 @@ using MVVM;
 
 namespace QDCeValutazioni.ViewModels
 {
-    public class DescrizioneViewModel : BindableBase
-    {
+        public class DescrizioneViewModel : BindableBase
+        {
         /// <summary>
         /// Insieme che contiene i campi di un Qdc.
         /// </summary>
         public ObservableCollection<Qdc> Descrizioni { get; set; }
 
-        private RequisitoViewModel RequistoVM;
+        //private RequisitoViewModel RequistoVM;
 
         public IDelegateCommand RequisitoCommand { get; set; }
+        //public IDelegateCommand SaveDescrizione { get; set; }
+
+        public string Descrizione { get; set; }
+        //public int id { get; set; }
 
         /// <summary>
         /// ViewModel da mostrare
@@ -40,18 +44,9 @@ namespace QDCeValutazioni.ViewModels
         /// </summary>
         public DescrizioneViewModel()
         {
-            RegisterCommands();
+            //RegisterCommands();
             //QdcDbDataRepository repo = new QdcDbDataRepository(new AppDbContext());
             //Descrizioni = new ObservableCollection<Qdc>(repo.Get());
         }
-
-        private void RegisterCommands()
-        {
-            RequistoVM = new RequisitoViewModel();
-            RequisitoCommand = new DelegateCommand(OnRequisitoList, CanRequisitoList);
-        }
-
-        private void OnRequisitoList(object obj) { Messenger.Default.Send<BindableBase>(RequistoVM); }
-        private bool CanRequisitoList(object arg) { return true; }
     }
 }

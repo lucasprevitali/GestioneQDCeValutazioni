@@ -15,17 +15,22 @@ namespace QDCeValutazioni.DA.Migrations
                     Id = table.Column<int>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     CognomeFormatore = table.Column<string>(nullable: true),
-                    CognomePerito = table.Column<string>(nullable: true),
+                    CognomePerito1 = table.Column<string>(nullable: true),
+                    CognomePerito2 = table.Column<string>(nullable: true),
                     DataConsegna = table.Column<DateTime>(nullable: true),
                     DataInizio = table.Column<DateTime>(nullable: true),
                     Descrizione = table.Column<string>(nullable: true),
                     MailFormatore = table.Column<string>(nullable: true),
-                    MailPerito = table.Column<string>(nullable: true),
+                    MailPerito1 = table.Column<string>(nullable: true),
+                    MailPerito2 = table.Column<string>(nullable: true),
                     NomeFormatore = table.Column<string>(nullable: true),
-                    NomePerito = table.Column<string>(nullable: true),
+                    NomePerito1 = table.Column<string>(nullable: true),
+                    NomePerito2 = table.Column<string>(nullable: true),
                     NumeroOre = table.Column<int>(nullable: true),
                     OraFine = table.Column<DateTime>(nullable: true),
                     OraInizio = table.Column<DateTime>(nullable: true),
+                    PathSave = table.Column<string>(nullable: true),
+                    PathTemplate = table.Column<string>(nullable: true),
                     Titolo = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
@@ -39,6 +44,7 @@ namespace QDCeValutazioni.DA.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
+                    CodiceReq = table.Column<string>(nullable: true),
                     Descrizione = table.Column<string>(nullable: true),
                     Titolo = table.Column<string>(nullable: true)
                 },

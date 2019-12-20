@@ -11,6 +11,7 @@
         <viewmodel:MainViewModel/>
     </UserControl.DataContext>
     <UserControl.Resources>
+        <!-- View che fanno parte del Main -->
         <DataTemplate DataType="{x:Type viewmodel:MenuViewModel}">
             <local:MenuView/>
         </DataTemplate>
@@ -26,23 +27,28 @@
         <DataTemplate DataType="{x:Type viewmodel:MotivazioneViewModel}">
             <local:MotivazioneView/>
         </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodel:SelezionaViewModel}">
+            <local:SelezionaView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodel:VisualizzaViewModel}">
+            <local:VisualizzaView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodel:VisualizzaVotiViewModel}">
+            <local:VisualizzaVotiView/>
+        </DataTemplate>
     </UserControl.Resources>
     <Grid>
-        <DockPanel>
+         <DockPanel>
+             <!-- Menu per uscire, creare un Qdc o selezionarlo -->
             <Menu DockPanel.Dock="Top">
                 <MenuItem Header="_File">
                     <MenuItem Header="_Crea QDC" Command="{Binding Path=QdcListCommand}"/>
-                    <MenuItem Header="_Seleziona QDC" Command="{Binding Path=MotivazioneListCommand}"/>
+                    <MenuItem Header="_Seleziona QDC" Command="{Binding Path=SelezionaListCommand}"/>
                     <MenuItem x:Name="esciMI" Header="_Esci" Click="EsciMI_Click"/>
-                </MenuItem>
-                <MenuItem Header="_Info">
-                    <MenuItem Header="_Aiuto"/>
-                    <MenuItem x:Name="informazioniMI" Header="_Informazioni"/>
                 </MenuItem>
             </Menu>
             <StackPanel></StackPanel>
         </DockPanel>
         <ContentControl Content="{Binding Path=CurrentViewModel}"/>
-        <!--<local:MenuView></local:MenuView>-->
     </Grid>
 </UserControl>

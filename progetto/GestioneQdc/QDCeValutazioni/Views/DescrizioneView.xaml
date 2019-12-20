@@ -8,10 +8,11 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.DataContext>
-        <viewmodel:DescrizioneViewModel />
+        <viewmodel:QdcViewModel />
     </UserControl.DataContext>
     <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="10*"></RowDefinition>
             <RowDefinition Height="1.3*"></RowDefinition>
@@ -21,32 +22,35 @@
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-        <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
+        <Label Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
                Content="Descrizione" 
-               Margin="20,8,20,8"
+               Margin="20,0,0,0"
                VerticalAlignment="Bottom"></Label>
 
+        <!-- Descrizione del Qdc. -->
         <TextBox
             TextWrapping="Wrap"
             AcceptsReturn="True"
             HorizontalScrollBarVisibility="Disabled"
             VerticalScrollBarVisibility="Auto"
-            Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
+            Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"
             Margin="20,8,20,8"
-            x:Name="DescrizionePeritoTextBox" />
+            x:Name="DescrizioneTextBox"
+            Text="{Binding Path=Descrizione}"/>
 
-        <Button Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="1" 
+        <!-- Bottone per salvare la descrizione sul database e sul file Word. -->
+        <Button Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" 
                 Margin="40,10,40,10" 
-                Content="Salva"
-                Command="{Binding RequisitoCommand}"
+                Content="Salva e Continua"
+                Command="{Binding SaveDescrizione}"
                 FontSize="14" 
                 x:Name="SaveDescrizioneButton" Click="SaveDescrizioneButton_Click"/>
 
-        <Button Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="1" 
+        <!--<Button Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="1" 
                 Margin="40,10,40,10" 
                 Content="Continua"
                 Command="{Binding RequisitoCommand}"
                 FontSize="14" 
-                x:Name="GoRequisitoButton"/>
+                x:Name="GoRequisitoButton"/>-->
     </Grid>
 </UserControl>

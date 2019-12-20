@@ -24,5 +24,10 @@ namespace QDCeValutazioni.DA.Models
         /// descrizione del requisito.
         /// </summary>
         public string Descrizione { get; set; }
+
+        /// <summary>
+        /// codice identificativo di un requisito (A01 - A30).
+        /// </summary>
+        public string CodiceReq { get; set; }
     }
 }

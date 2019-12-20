@@ -22,17 +22,21 @@ namespace QDCeValutazioni.DA.Services
         }
 
         /// <summary>
-        /// Ritorna tutte le asseganzioni ordinate per titolo.
+        /// Ritorna tutte le asseganzioni ordinate per Id.
         /// </summary>
-        /// <returns>Le assegnazioni ordinate per titolo.</returns>
+        /// <returns>Le assegnazioni ordinate per Id.</returns>
         public override IQueryable<Qdc> Get()
         {
-            return base.Get().OrderBy(s => s.Titolo);
+            return base.Get().OrderBy(s => s.Id);
         }
 
-        public override Qdc Insert(Qdc entity)
+        /// <summary>
+        /// Esegue un update della tabella Qdc sulla base di un entità Qdc
+        /// </summary>
+        /// <param name="entity">Le modifiche da eseguire</param>
+        public override void Update(Qdc entity)
         {
-            return base.Insert(entity);
+            base.Update(entity);
         }
     }
 }

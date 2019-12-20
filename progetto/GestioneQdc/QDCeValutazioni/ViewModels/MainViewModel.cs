@@ -15,18 +15,14 @@ namespace QDCeValutazioni.ViewModels
         /// istanza dei ViewModel
         /// </summary>
         private QdcViewModel QdcVM;
-        private RequisitoViewModel RequisitoVM;
-        private DescrizioneViewModel DescrizioneVM;
-        private MotivazioneViewModel MotivazioneVM;
+        private SelezionaViewModel SelezionaVM;
         private MenuViewModel MenuVM;
 
         /// <summary>   
         /// istanza di IDelegateCommand per la delega delle operazioni
         /// </summary>
         public IDelegateCommand QdcListCommand { get; set; }
-        public IDelegateCommand RequisitoListCommand { get; set; }
-        public IDelegateCommand DescizioneListCommand { get; set; }
-        public IDelegateCommand MotivazioneListCommand { get; set; }
+        public IDelegateCommand SelezionaListCommand { get; set; }
         public IDelegateCommand MenuListCommand { get; set; }
 
         /// <summary>
@@ -53,7 +49,11 @@ namespace QDCeValutazioni.ViewModels
         /// </summary>
         private void RegisterCommands()
         {
-            MenuVM = new MenuViewModel();
+            MenuVM = new MenuViewModel();     
+            QdcVM = new QdcViewModel();
+            SelezionaVM = new SelezionaViewModel();
+            QdcListCommand = new DelegateCommand(OnQdcList, CanQdcList);
+            SelezionaListCommand = new DelegateCommand(OnSelezionaList, CanSelezionaList);
             MenuListCommand = new DelegateCommand(OnMenuList, CanMenuList);
             // la view di partenza è quella del menu.
             currentViewModel = MenuVM;
@@ -83,7 +83,8 @@ namespace QDCeValutazioni.ViewModels
         /// <param name="obj"></param>
         private void OnQdcList(object obj)
         {
-            CurrentViewModel = QdcVM;
+            if(CurrentViewModel == MenuVM)
+                CurrentViewModel = QdcVM;
         }
 
         private bool CanQdcList(object arg)
@@ -91,32 +92,18 @@ namespace QDCeValutazioni.ViewModels
             return true;
         }
 
-        private void OnRequisitoList(object obj)
-        {
-            CurrentViewModel = RequisitoVM;
-        }
-
-        private bool CanRequisitoList(object arg)
-        {
-            return true;
-        }
-
-        private void OnDescrizioneList(object obj)
-        {
-            CurrentViewModel = DescrizioneVM;
-        }
-
         private bool CanDescrizioneList(object arg)
         {
             return true;
         }
 
-        private void OnMotivazioneList(object obj)
+        private void OnSelezionaList(object obj)
         {
-            CurrentViewModel = MotivazioneVM;
+            if (CurrentViewModel == MenuVM)
+                CurrentViewModel = SelezionaVM;
         }
 
-        private bool CanMotivazioneList(object arg)
+        private bool CanSelezionaList(object arg)
         {
             return true;
         }

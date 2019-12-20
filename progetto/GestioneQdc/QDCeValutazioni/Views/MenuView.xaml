@@ -12,20 +12,22 @@
     </UserControl.DataContext>
     <Grid>
         <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"></ColumnDefinition>
-                <ColumnDefinition Width="*"></ColumnDefinition>
-         </Grid.ColumnDefinitions>
-            
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <!-- Bottone per creare un Qdc. Porta a QdcView -->
         <Button 
-            Grid.Column="0" VerticalAlignment="Center"  HorizontalAlignment="Center"
-            Content="Crea QDC" Padding="25"
+            Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"
+            Content="Crea QDC" Padding="50" FontSize="30"
             Command="{Binding Path=QdcListCommand}">
         </Button>
 
+        <!-- Bottone per selezionare un Qdc. Porta a SelezionaView -->
         <Button 
-            Grid.Column="1" VerticalAlignment="Center"  HorizontalAlignment="Center"
-            Content="Seleziona QDC" Padding="25" 
-            Command="{Binding Path=MotivazioneListCommand}">
+            Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"
+            Content="Seleziona QDC" Padding="50" FontSize="30"
+            Command="{Binding Path=SelezionaListCommand}">
         </Button>
     </Grid>
 </UserControl>

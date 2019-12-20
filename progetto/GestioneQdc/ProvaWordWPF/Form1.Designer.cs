@@ -33,6 +33,8 @@
             this.nomeFormatore = new System.Windows.Forms.TextBox();
             this.valL = new System.Windows.Forms.Label();
             this.eseguiBT = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // nomeL
@@ -53,9 +55,10 @@
             // 
             // nomeFormatore
             // 
+            this.nomeFormatore.AcceptsReturn = true;
             this.nomeFormatore.Location = new System.Drawing.Point(242, 85);
             this.nomeFormatore.Name = "nomeFormatore";
-            this.nomeFormatore.Size = new System.Drawing.Size(100, 20);
+            this.nomeFormatore.Size = new System.Drawing.Size(479, 20);
             this.nomeFormatore.TabIndex = 2;
             // 
             // valL
@@ -69,7 +72,7 @@
             // 
             // eseguiBT
             // 
-            this.eseguiBT.Location = new System.Drawing.Point(167, 151);
+            this.eseguiBT.Location = new System.Drawing.Point(104, 406);
             this.eseguiBT.Name = "eseguiBT";
             this.eseguiBT.Size = new System.Drawing.Size(75, 23);
             this.eseguiBT.TabIndex = 4;
@@ -77,11 +80,31 @@
             this.eseguiBT.UseVisualStyleBackColor = true;
             this.eseguiBT.Click += new System.EventHandler(this.eseguiBT_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(104, 154);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "req";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Location = new System.Drawing.Point(242, 175);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(479, 254);
+            this.richTextBox1.TabIndex = 6;
+            this.richTextBox1.Text = "";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.eseguiBT);
             this.Controls.Add(this.valL);
             this.Controls.Add(this.nomeFormatore);
@@ -101,6 +124,8 @@
         private System.Windows.Forms.TextBox nomeFormatore;
         private System.Windows.Forms.Label valL;
         private System.Windows.Forms.Button eseguiBT;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.RichTextBox richTextBox1;
     }
 }
 

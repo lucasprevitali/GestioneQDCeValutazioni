@@ -11,7 +11,7 @@ using System;
 namespace QDCeValutazioni.DA.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20191107140558_Initial")]
+    [Migration("20191209185323_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -51,7 +51,9 @@ namespace QDCeValutazioni.DA.Migrations
 
                     b.Property<string>("CognomeFormatore");
 
-                    b.Property<string>("CognomePerito");
+                    b.Property<string>("CognomePerito1");
+
+                    b.Property<string>("CognomePerito2");
 
                     b.Property<DateTime?>("DataConsegna");
 
@@ -61,17 +63,25 @@ namespace QDCeValutazioni.DA.Migrations
 
                     b.Property<string>("MailFormatore");
 
-                    b.Property<string>("MailPerito");
+                    b.Property<string>("MailPerito1");
+
+                    b.Property<string>("MailPerito2");
 
                     b.Property<string>("NomeFormatore");
 
-                    b.Property<string>("NomePerito");
+                    b.Property<string>("NomePerito1");
+
+                    b.Property<string>("NomePerito2");
 
                     b.Property<int?>("NumeroOre");
 
                     b.Property<DateTime?>("OraFine");
 
                     b.Property<DateTime?>("OraInizio");
+
+                    b.Property<string>("PathSave");
+
+                    b.Property<string>("PathTemplate");
 
                     b.Property<string>("Titolo");
 
@@ -84,6 +94,8 @@ namespace QDCeValutazioni.DA.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
+
+                    b.Property<string>("CodiceReq");
 
                     b.Property<string>("Descrizione");
 

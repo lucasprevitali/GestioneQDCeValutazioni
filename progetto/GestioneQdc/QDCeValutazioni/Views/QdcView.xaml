@@ -10,16 +10,33 @@
     <UserControl.DataContext>
         <viewmodel:QdcViewModel/>
     </UserControl.DataContext>
-    <Grid>
+    <Grid ScrollViewer.CanContentScroll="True"
+       ScrollViewer.HorizontalScrollBarVisibility="Auto">
         <Grid.RowDefinitions>
             <RowDefinition Height="3*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="3*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="3*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="3*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="3*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="3*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="3*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="3*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="3*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="3*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="3*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="3*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="3*"></RowDefinition>
             <RowDefinition Height="4*"></RowDefinition>
         </Grid.RowDefinitions>
@@ -33,117 +50,240 @@
                Grid.Column="0" 
                Grid.ColumnSpan="2"
                Content="Percorso File"></Label>-->
-        <TextBox Grid.Row="0" 
+        
+        <!-- Percorso del file di template e di salvataggio -->
+        <Label Grid.Row="2" 
+               Grid.Column="0" 
+               Margin="10,0,0,0"
+               Content="Path file template:">
+        </Label>
+        <TextBox Grid.Row="2" 
                  Grid.Column="0" 
                  Grid.ColumnSpan="2" 
-                 Margin="20,8,20,8" 
-                 x:Name="PathTextBox" 
-                 AutomationProperties.HelpText="Path file" 
-                 Text="Path file" Foreground="Gray" 
-                 MouseEnter="PathTextBox_MouseEnter" MouseLeave="PathTextBox_MouseLeave"/>
+                 Margin="120,0,20,0" 
+                 x:Name="PathTemplateTextBox" 
+                 Text="{Binding Path=PathTemplate, Mode=TwoWay}" Foreground="Gray" />
 
-        <TextBox Grid.Row="1" 
+        <Label Grid.Row="4" 
+               Grid.Column="0" 
+               Margin="10,0,0,0"
+               Content="Path in cui salvare:">
+        </Label>
+        <TextBox Grid.Row="4" 
                  Grid.Column="0" 
                  Grid.ColumnSpan="2" 
-                 Margin="20,8,20,8"
+                 Margin="120,2,20,2"  
+                 x:Name="PathSaveTextBox" 
+                 AutomationProperties.HelpText="Path file" 
+                 Text="{Binding Path=PathSave}" Foreground="Gray"/>
+
+        <!-- Titolo del Qdc. -->
+        <Label Grid.Row="6" 
+               Grid.Column="0" 
+               Margin="10,0,0,0"
+               Content="Titolo:">
+        </Label>
+        <TextBox Grid.Row="6" 
+                 Grid.Column="0" 
+                 Grid.ColumnSpan="2" 
+                 Margin="120,0,20,0" 
                  x:Name="TitoloTextBox" 
                  AutomationProperties.HelpText="Titolo" 
-                 Text="Titolo" Foreground="Gray"></TextBox>
+                 Text="{Binding Path=Titolo}" Foreground="Gray"></TextBox>
 
-        <TextBox Grid.Row="2" 
-                 Grid.Column="0" 
-                 Grid.ColumnSpan="1" 
-                 Margin="20,8,20,8" 
-                 x:Name="NomeFormatoreTextBox" 
-                 AutomationProperties.HelpText="Nome formatore" 
-                 Text="Nome formatore" Foreground="Gray"></TextBox>
-
-        <TextBox Grid.Row="2" 
-                 Grid.Column="1" 
-                 Grid.ColumnSpan="1" 
-                 Margin="20,8,20,8" 
-                 x:Name="CognomeFormatoreTextBox" 
-                 AutomationProperties.HelpText="Cognome formatore" 
-                Text="Cognome formatore" Foreground="Gray"></TextBox>
-
-        <TextBox Grid.Row="4" 
-                 Grid.Column="0" 
-                 Grid.ColumnSpan="1" 
-                 Margin="20,8,20,8" 
-                 x:Name="NomePeritoTextBox" 
-                 AutomationProperties.HelpText="Nome perito" 
-                 Text="Nome perito" Foreground="Gray"></TextBox>
-
-        <TextBox Grid.Row="4" 
-                 Grid.Column="1" 
-                 Grid.ColumnSpan="1" 
-                 Margin="20,8,20,8" 
-                 x:Name="CognomePeritoTextBox" 
-                 AutomationProperties.HelpText="Cognome perito" 
-                 Text="Cognome perito" Foreground="Gray"></TextBox>
-
-        <TextBox Grid.Row="3" 
-                 Grid.Column="0" 
-                 Grid.ColumnSpan="2" 
-                 Margin="20,8,20,8" 
-                 x:Name="EmailFormatoreTextBox" 
-                 AutomationProperties.HelpText="Email formatore" 
-                 Text="Mail formatore" Foreground="Gray"></TextBox>
-
-        <TextBox Grid.Row="5" 
-                 Grid.Column="0" 
-                 Grid.ColumnSpan="2" 
-                 Margin="20,8,20,8" 
-                 x:Name="EmailPeritoTextBox" 
-                 AutomationProperties.HelpText="Email perito" 
-                 Text="Mail perito" Foreground="Gray"></TextBox>
-
-        <DatePicker Grid.Row="6" Grid.Column="0" Margin="20,8,140,8" 
-                    x:Name="DataInizio" 
-                    Text="Data inizio" Foreground="Gray"></DatePicker>
-        <DatePicker Grid.Row="6" Grid.Column="1" Margin="20,8,140,8" 
-                    x:Name="DataConsegna" 
-                    Text="Data consegna" Foreground="Gray"></DatePicker>
-
-        <TextBox Grid.Row="7" 
-                 Grid.Column="0" 
-                 Margin="20,8,140,8" 
-                 x:Name="OraInizio" 
-                 AutomationProperties.HelpText="hh:mm" 
-                 Text="Ora inizio" Foreground="Gray"></TextBox>
-
-        <TextBox Grid.Row="7" 
-                 Grid.Column="1" 
-                 Margin="20,8,140,8" 
-                 x:Name="OraFine" 
-                 AutomationProperties.HelpText="hh:mm" 
-                 Text="Ora fine" Foreground="Gray"></TextBox>
-        
+        <!-- Nome e cognome del formatore del Qdc. -->
+        <Label Grid.Row="8" 
+               Grid.Column="0" 
+               Margin="10,0,0,0"
+               Content="Nome formatore:">
+        </Label>
         <TextBox Grid.Row="8" 
                  Grid.Column="0" 
-                 Margin="20,8,140,8" 
+                 Grid.ColumnSpan="1" 
+                 Margin="120,0,20,0" 
+                 x:Name="NomeFormatoreTextBox" 
+                 AutomationProperties.HelpText="Nome formatore" 
+                 Text="{Binding Path=NomeFormatore}" Foreground="Gray"></TextBox>
+
+        <Label Grid.Row="8" 
+               Grid.Column="1" 
+               Margin="10,0,0,0"
+               Content="Cognome formatore:">
+        </Label>
+        <TextBox Grid.Row="8" 
+                 Grid.Column="1" 
+                 Grid.ColumnSpan="1" 
+                 Margin="135,0,20,0" 
+                 x:Name="CognomeFormatoreTextBox" 
+                 AutomationProperties.HelpText="Cognome formatore" 
+                Text="{Binding Path=CognomeFormatore}" Foreground="Gray"></TextBox>
+
+        <!-- Nome e cognome del perito del Qdc. -->
+        <Label Grid.Row="12" 
+               Grid.Column="0" 
+               Margin="10,0,0,0"
+               Content="Nome perito:">
+        </Label>
+        <TextBox Grid.Row="12" 
+                 Grid.Column="0" 
+                 Grid.ColumnSpan="1" 
+                 Margin="120,0,20,0"  
+                 x:Name="NomePeritoTextBox" 
+                 AutomationProperties.HelpText="Nome perito" 
+                 Text="{Binding Path=NomePerito}" Foreground="Gray"></TextBox>
+
+        <Label Grid.Row="12" 
+               Grid.Column="1" 
+               Margin="10,0,0,0"
+               Content="Cognome perito:">
+        </Label>
+        <TextBox Grid.Row="12" 
+                 Grid.Column="1" 
+                 Grid.ColumnSpan="1" 
+                 Margin="135,0,20,0" 
+                 x:Name="CognomePeritoTextBox" 
+                 AutomationProperties.HelpText="Cognome perito" 
+                 Text="{Binding Path=CognomePerito}" Foreground="Gray"></TextBox>
+
+        <!-- Mail del formatore del Qdc. -->
+        <Label Grid.Row="10" 
+               Grid.Column="0" 
+               Margin="10,0,0,0"
+               Content="Mail formatore:">
+        </Label>
+        <TextBox Grid.Row="10" 
+                 Grid.Column="0" 
+                 Grid.ColumnSpan="2" 
+                 Margin="120,0,20,0" 
+                 x:Name="EmailFormatoreTextBox" 
+                 AutomationProperties.HelpText="Email formatore" 
+                 Text="{Binding Path=MailFormatore}" Foreground="Gray"></TextBox>
+
+        <!-- Mail del perito del Qdc. -->
+        <Label Grid.Row="14" 
+               Grid.Column="0" 
+               Margin="10,0,0,0"
+               Content="Mail perito:">
+        </Label>
+        <TextBox Grid.Row="14" 
+                 Grid.Column="0" 
+                 Grid.ColumnSpan="2" 
+                 Margin="120,2,20,2"  
+                 x:Name="EmailPeritoTextBox" 
+                 AutomationProperties.HelpText="Email perito" 
+                 Text="{Binding Path=MailPerito}" Foreground="Gray"></TextBox>
+
+        <!-- NOme e Cognome del perito 2 del perito del Qdc. -->
+        <Label Grid.Row="16" 
+               Grid.Column="0" 
+               Margin="10,0,0,0"
+               Content="Nome perito 2:">
+        </Label>
+        <TextBox Grid.Row="16" 
+                 Grid.Column="0" 
+                 Grid.ColumnSpan="1" 
+                 Margin="120,2,20,2"  
+                 x:Name="NomePerito1TextBox" 
+                 AutomationProperties.HelpText="Nome perito" 
+                 Text="{Binding Path=NomePerito2}" Foreground="Gray"></TextBox>
+
+        <Label Grid.Row="16" 
+               Grid.Column="1" 
+               Margin="10,0,0,0"
+               Content="Cognome perito 2:">
+        </Label>
+        <TextBox Grid.Row="16" 
+                 Grid.Column="1" 
+                 Grid.ColumnSpan="1" 
+                 Margin="135,2,20,2"  
+                 x:Name="CognomePerito2TextBox" 
+                 AutomationProperties.HelpText="Cognome perito" 
+                 Text="{Binding Path=CognomePerito2}" Foreground="Gray"></TextBox>
+
+        <!-- Mail del perito 2 del Qdc. -->
+        <Label Grid.Row="18" 
+               Grid.Column="0" 
+               Margin="10,0,0,0"
+               Content="Mail perito 2:">
+        </Label>
+        <TextBox Grid.Row="18" 
+                 Grid.Column="0" 
+                 Grid.ColumnSpan="2" 
+                 Margin="120,2,20,2" 
+                 x:Name="EmailPerito2TextBox" 
+                 AutomationProperties.HelpText="Email perito" 
+                 Text="{Binding Path=MailPerito2}" Foreground="Gray"></TextBox>
+
+        <!-- Date di inizio e di Consegna del Qdc -->
+        <Label Grid.Row="20" 
+               Grid.Column="0" 
+               Margin="10,0,0,0"
+               Content="Data inizio:">
+        </Label>
+        <TextBox Grid.Row="20" Grid.Column="0" Margin="120,2,20,2" 
+                    x:Name="DataInizio" 
+                    Text="{Binding Path=DataInizio, StringFormat=dd.MM.yyyy}" Foreground="Gray"></TextBox>
+
+        <Label Grid.Row="20" 
+               Grid.Column="1" 
+               Margin="10,0,0,0"
+               Content="Data consegna:">
+        </Label>
+        <TextBox Grid.Row="20" Grid.Column="1" Margin="120,2,20,2" 
+                    x:Name="DataConsegna" 
+                    Text="{Binding Path=DataConsegna, StringFormat=dd.MM.yyyy}" Foreground="Gray"></TextBox>
+
+        <!-- Orario di Inizio e di Fine del Qdc -->
+        <Label Grid.Row="22" 
+               Grid.Column="0" 
+               Margin="10,0,0,0"
+               Content="Ora inizio:">
+        </Label>
+        <TextBox Grid.Row="22" 
+                 Grid.Column="0" 
+                 Margin="120,2,20,2" 
+                 x:Name="OraInizio" 
+                 AutomationProperties.HelpText="hh:mm" 
+                 Text="{Binding Path=OraInizio, StringFormat=HH:mm}" Foreground="Gray"></TextBox>
+
+        <Label Grid.Row="22" 
+               Grid.Column="1" 
+               Margin="10,0,0,0"
+               Content="Ora fine:">
+        </Label>
+        <TextBox Grid.Row="22" 
+                 Grid.Column="1" 
+                 Margin="120,2,20,2"  
+                 x:Name="OraFine" 
+                 AutomationProperties.HelpText="hh:mm" 
+                 Text="{Binding Path=OraFine, StringFormat=HH:mm}" Foreground="Gray"></TextBox>
+
+        <!-- Numero di ore del Qdc -->
+        <Label Grid.Row="24" 
+               Grid.Column="0" 
+               Margin="10,0,0,0"
+               Content="Numero ore:">
+        </Label>
+        <TextBox Grid.Row="24" 
+                 Grid.Column="0" 
+                 Margin="120,2,20,2" 
                  x:Name="NumeroOre" 
                  AutomationProperties.HelpText="numero ore" 
-                 Text="Numero ore" Foreground="Gray"></TextBox>
+                 Text="{Binding Path=NumeroOre}" Foreground="Gray"></TextBox>
 
-        <Button Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="1" 
-                Margin="40,10,40,10" 
-                Content="Salva" 
-                Command="{Binding SaveInfo}" 
+        <!-- Bottone per salvare sul database e sul file Word. -->
+        <Button Grid.Row="25" Grid.Column="0" Grid.ColumnSpan="2" 
+                Margin="40,4,40,4" 
+                Content="Salva e Continua" 
+                Command="{Binding Path=SaveInfo}" 
                 FontSize="14" 
                 x:Name="SaveInfoButton" Click="SaveInfoButton_Click"/>
 
-        <Button Grid.Row="9" Grid.Column="1" Grid.ColumnSpan="1" 
-                Margin="40,10,40,10" 
+        <!--<Button Grid.Row="25" Grid.Column="1" Grid.ColumnSpan="1" 
+                Margin="40,4,40,4" 
                 Content="Continua" 
                 Command="{Binding DescrizioneCommand}" 
                 FontSize="14" 
-                x:Name="GoDescrizioneButton"/>
-
-        <!--<StackPanel Grid.Row="9" Orientation="Horizontal" HorizontalAlignment="Right">
-            <Button Command="{Binding Add}" Content="Aggiungi"></Button>
-            <Button Command="{Binding Save}" Content="Update"></Button>
-            <Button Command="{Binding Delete}" Content="Elimina"></Button>
-        </StackPanel>-->
+                x:Name="GoDescrizioneButton"/>-->
     </Grid>
 </UserControl>

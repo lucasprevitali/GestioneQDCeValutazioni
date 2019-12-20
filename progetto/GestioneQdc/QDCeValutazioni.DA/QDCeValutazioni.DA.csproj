@@ -124,9 +124,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppDbContext.cs" />
-    <Compile Include="Migrations\20191107140558_Initial.cs" />
-    <Compile Include="Migrations\20191107140558_Initial.designer.cs">
-      <DependentUpon>20191107140558_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\20191209185323_Initial.cs" />
+    <Compile Include="Migrations\20191209185323_Initial.designer.cs">
+      <DependentUpon>20191209185323_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\AppDbContextModelSnapshot.cs" />
     <Compile Include="Models\Assegnazione.cs" />
@@ -148,6 +148,7 @@
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
+    <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
